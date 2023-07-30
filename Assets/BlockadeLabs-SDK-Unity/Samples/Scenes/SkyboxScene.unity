@@ -2818,7 +2818,7 @@ MonoBehaviour:
   stylesDropdown: {fileID: 987378034}
   generateButton: {fileID: 790061108}
   popupPanel: {fileID: 897809236}
-  drawingLines: {fileID: 1126414901}
+  drawingLines: {fileID: 0}
 --- !u!4 &1700559438
 Transform:
   m_ObjectHideFlags: 0
@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c37ee5440861a47884a14ba990aa23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiKey: MBWXJvo7TfG6iT6XOdjbMa5z1hfWIKLL7BcTmv8VAt5Luv4QtClsEdlRBS21
+  apiKey: 
   assignToMaterial: 1
   skyboxStyleFields:
   - key: prompt
