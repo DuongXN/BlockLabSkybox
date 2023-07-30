@@ -10,7 +10,7 @@ namespace BlockadeLabs_SDK_Unity.Runtime
         [SerializeField] private TMP_Text generateButton;
         [SerializeField] private GameObject popupPanel;
         private BlockadeLabsSkybox blockadeLabsSkybox;
-        public DrawingManager drawingLines;
+        public DrawingManager drawingTexture;
 
         async void Start()
         {
@@ -48,7 +48,7 @@ namespace BlockadeLabs_SDK_Unity.Runtime
             blockadeLabsSkybox.skyboxStyleFields[0].value = promptInput.text;
             if (stylesDropdown.value > 0)
             {
-                string drawingData = TextureToBase64(drawingLines.drawingTexture);
+                string drawingData = TextureToBase64(drawingTexture.drawingTexture);
                 _ = blockadeLabsSkybox.CreateSkybox(
                     blockadeLabsSkybox.skyboxStyleFields,
                     blockadeLabsSkybox.skyboxStyles[stylesDropdown.value - 1].id,

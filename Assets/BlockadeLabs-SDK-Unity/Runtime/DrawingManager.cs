@@ -6,15 +6,26 @@ namespace BlockadeLabs_SDK_Unity.Runtime
     public class DrawingManager : MonoBehaviour
     {
         public Texture2D drawingTexture;
-        private RawImage drawingImage;
+        public RawImage drawingImage;
         private bool isDrawing = false;
+        [SerializeField] private Toggle isDraw2D;
+        [SerializeField] private GameObject panelDraw2D;
 
         void Start()
         {
-            drawingImage = GetComponent<RawImage>();
-            drawingTexture = new Texture2D(256, 256, TextureFormat.ARGB32, false);
-            drawingTexture.filterMode = FilterMode.Point;
+            isDraw2D.isOn = false;
+            //drawingImage = GetComponent<RawImage>();
+            drawingTexture = new Texture2D(256, 256, TextureFormat.ARGB32, false)
+            {
+                filterMode = FilterMode.Point
+            };
             drawingImage.texture = drawingTexture;
+            isDraw2D.onValueChanged.AddListener(OpenPanelDraw2D);
+        }
+
+        private void OpenPanelDraw2D(bool isOpen)
+        {
+            panelDraw2D.SetActive(isOpen);
         }
 
         void Update()
